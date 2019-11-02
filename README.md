@@ -1,1 +1,1 @@
-Demo Code Example.
+Demo code example.

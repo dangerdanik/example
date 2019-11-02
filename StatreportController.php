@@ -2,6 +2,8 @@
 
 /**
  * Description of StatreportController
+ 
+ контроллер взаимодействующий с видом camp
  *
  * @author dan
  */

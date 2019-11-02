@@ -1,5 +1,9 @@
 <?php
 
+/* в этом виде отображается отчет с 3-х уровневой группировкой полей.
+   поля также добавляются и убираются из грида динамически
+*/
+
 use yii\helpers\Html;
 //use yii\grid\GridView;
 use kartik\select2\Select2;
@@ -107,34 +111,7 @@ $controller_id = Yii::$app->controller->id;
         <?= "Отчет по кампании" ?>: <?= $campaign['name'] ?>  </h1>
 
     <?php
-//    $tableNames = Yii::$app->db->getSchema()->tableNames;
-//
-//        foreach ($tableNames as $tableName) {
-//
-//            if (strpos($tableName, 'stat_data') !== false) {
-//
-//                //$this->dropTable($tableName);
-//                
-//                debug($tableName);
-//            }
-//
-//            if (strpos($tableName, 'traffic_queue') !== false) {
-//
-//                //$this->dropTable($tableName);
-//                
-//                debug($tableName);
-//            }
-//        }
-//    if (isset($session)) {
-////        debug('select1' . '=' . $session['select1']
-////                . ' ' . 'select2' . '=' . $session['select2']
-////                . ' ' . 'select3' . '=' . $session['select3']
-////                . ' ' . 'selectDate' . '=' . $session['selectDate']
-////                . ' ' . 'date_start' . '=' . $session['date_start']
-////                . ' ' . 'date_end' . '=' . $session['date_end']);
-//
-//    debug($_SESSION); //die;
-//    }
+
 
     // берем значения из сессий
     $select1_val = [$session['select1'] => $session['select1']];
@@ -191,7 +168,6 @@ $controller_id = Yii::$app->controller->id;
 
         print $script;
     }
-
     
     // избавляемся от повторяющих данных в селект2 и селект 3
     unset($select_2_data[$session['select1']]);
@@ -279,40 +255,6 @@ $controller_id = Yii::$app->controller->id;
                 ],
             ]);
 
-//        echo ButtonDropdown::widget([
-//            'label' => 'Сегодня',
-//            'options' => [
-//                'class' => 'btn btn-default',
-//                'style' => 'margin-left:100px',
-//                'id' => 'date_button',
-//            ],
-//            'dropdown' => [
-////                'options' => ['id' => 'date',
-////                    'data' => 'date_to_date',
-////                ],
-//                'items' => [
-////                    [
-////                        'label' => 'Сегодня',
-////                        'url' => '#',
-////                    ],
-//                    [
-//                        'options' => ['id' => 'date_today',
-//                            'date_today' => 'date_today',
-//                        ],
-//                        'label' => 'Сегодня',
-//                        'url' => '#'
-//                    ],
-//                    
-//                    [
-//                        'options' => ['id' => 'date_yesterday',
-//                            'date_yesterday' => 'date_yesterday',
-//                        ],
-//                        'label' => 'Вчера',
-//                        'url' => '#'
-//                    ],
-//                ]
-//            ]
-//        ]);
             ?>
 
         </div>
@@ -411,31 +353,8 @@ $controller_id = Yii::$app->controller->id;
         </div>
 
         <?php
-//        
-//        $show_reset_filter_button = "display: none";
-//
-//        if (isset($_COOKIE['filter'])) {
-//            
-////            $script = "<script> $.pjax.reload({container: '#statreport_page'}) </script>";
-////
-////            print $script;
-//            
-//            $show_reset_filter_button = "display: block";
-//        }
-        ?>
 
-        <div id="div_reset_filter_button" style='float:left; padding-right: 3px;'>
-            <?php
-// удаление выбранных потоков
-//            Html::Button('Сброс', ['class' => 'btn btn-danger', 'id' => 'filter_reset',
-//                'name' => 'filter_reset',
-//                'title' => 'Сбросить фильтры'
-//                    //'data' => ['confirm' => 'Are you sure?'],
-//                    // 'onclick' => "delStream();",
-//            ]);
-//            
-            ?>
-        </div>
+        ?>
 
     </div>
 

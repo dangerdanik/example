@@ -449,16 +449,6 @@ $controller_id = Yii::$app->controller->id;
         'toggleDataContainer' => ['class' => 'btn-group mr-2'],
         'columns' => $columns,
         'showPageSummary' => true
-//        [
-//            'class' => 'kartik\grid\FormulaColumn',
-//            'header' => 'Amount In Stock',
-//            'mergeHeader' => true,
-//         //   'value' => NULL,
-//            'width' => '150px',
-//            'hAlign' => 'right',
-//            'format' => ['decimal', 2],
-//            'pageSummary' => true
-//        ],
     ]);
     ?>
 </div>
